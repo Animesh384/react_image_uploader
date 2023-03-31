@@ -15,9 +15,9 @@ function ImageUploader() {
     event.preventDefault();
     const formData = new FormData();
     for (let i = 0; i < selectedFiles.length; i++) {
-      formData.append('images', selectedFiles[i]);
+      formData.append('file', selectedFiles[i]);
     }
-    fetch('https://reqres.in/api/post', {
+    fetch('http://10.5.68.172:4000/upload', {
       method: 'POST',
       body: formData
     })
