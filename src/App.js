@@ -15,9 +15,12 @@ function ImageUploader() {
     event.preventDefault();
     const formData = new FormData();
     for (let i = 0; i < selectedFiles.length; i++) {
-      formData.append('file', selectedFiles[i]);
+      formData.append('images', selectedFiles[i]);
     }
-    fetch('http://10.5.68.172:4000/upload', {
+    formData.append('username','2129011');
+    formData.append('type','hrms');
+    formData.append('obg','r23546rthyj');
+    fetch('http://localhost:5000/api/upload/multiple', {
       method: 'POST',
       body: formData
     })
